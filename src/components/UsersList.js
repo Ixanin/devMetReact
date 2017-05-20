@@ -4,7 +4,6 @@
 import React, { Component } from  'react';
 // import PropTypes from 'prop-types';
 
-
 class Users extends Component {
     render() {
         return (
@@ -23,17 +22,15 @@ class Users extends Component {
                     <span>{ this.props.item.bio }$</span>
                 </div>
             </section>
-
         );
     }
 }
 
+//
 // Users.propTypes = {
 //     item:PropTypes.name({
 //     name: PropTypes.string
 // })
 // };
-
-
 
 export default Users;

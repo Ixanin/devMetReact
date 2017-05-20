@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import Users from './components/UsersList'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
 import faker from 'faker';
-// import { Button } from 'react-bootstrap';
-
 import './App.css';
 
 class App extends Component {
@@ -56,11 +53,10 @@ class App extends Component {
             }
         ],
         filterName: ''
-};
+    };
 
     searchByNameAsc = () => {
         this.setState(previousState => {
-            console.log(previousState.users);
             const users = previousState.users.sort(function (a, b) {
                 return a.name > b.name;
             });
@@ -70,7 +66,6 @@ class App extends Component {
 
     searchByNameDe = event => {
         this.setState(previousState => {
-            console.log(previousState.users);
             const users = previousState.users.sort(function (a, b) {
                 return a.name < b.name;
             });
@@ -95,11 +90,10 @@ class App extends Component {
                     sortby desc
                 </button>
 
-
                 <input type="text" onChange={this.filterResults}/>
                 <h1>Users</h1>
                 { this.state.users
-                    .filter(user =>  -1 !== JSON.stringify(user).toUpperCase().indexOf(this.state.filterName))
+                    .filter(user => -1 !== JSON.stringify(user).toUpperCase().indexOf(this.state.filterName))
                     .filter(user => !user.isFav)
                     .map(user =>
                         <Users key={ user.id }
@@ -108,14 +102,13 @@ class App extends Component {
 
                 <h2>Favourites </h2>
                 { this.state.users
-                    .filter(user =>  -1 !== JSON.stringify(user).toUpperCase().indexOf(this.state.filterName))
+                    .filter(user => -1 !== JSON.stringify(user).toUpperCase().indexOf(this.state.filterName))
                     .filter(user => user.isFav)
                     .map(user =>
                         <Users key={ user.id }
                                item={ user }/>
                     ) }
             </section>
-
         );
     }
 }

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import Users from './components/UsersList'
-import App from './App'
 import { BrowserRouter, Route, NavLink } from 'react-router-dom'
+import App from './App'
 import Contact from './components/Concact'
 import './App.css'
 
@@ -21,6 +20,5 @@ class Home extends Component {
         );
     }
 }
-
 
 export default Home;
